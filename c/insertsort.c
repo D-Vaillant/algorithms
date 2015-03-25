@@ -2,31 +2,35 @@
     Implementation of the insertion sort algorithm. */
 
 #include <stdio.h>
+#include "arrprint.c"
 
-int * insertsort(int arr[], int size){
-    int m;
+int insertsort(int arr[], int size){
+    int m=1;
     int k;
     int key;
 
-    for (m=1; m<size; m++){
+    for (m; m<size; m++){
         k = m-1;
         key = arr[m];
         while (k > -1 && arr[k] > key){
             arr[k+1] = arr[k];
             k--;                      }
         arr[k+1] = key;
-                         }
+                          }
    return arr;
 }
 
+/*
 void printer(int arr[], int size){
     printf("[");
-    for (int a = 0; a < size-1; a++){
+    int a;
+    for (a = 0; a < size-1; a++){
         printf("%d, ", arr[a]);
-                                  }
+                                    }
     printf("%d", arr[size-1]);
     printf("]\n");
 }
+*/
 
 int main(){
     int z = 7;

@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+''' insertsort.py: Implements the insertion sort algorithm. Includes some
+                   error-prevention. '''
+
+__author__ = "David Vaillant"
+__credits__ = "LCRS"
+
 def main(array):
     try:
         for x in range(1, len(array)):

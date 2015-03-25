@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+''' binaryiterative_search.py: Uses a binary search algorithm on an already
+                               sorted list to return a value. main function
+                               presorts the list using mergesort. Iterative.
+'''
+
+__author__ = "David Vaillant"
+__credits__ = "LCRS"
+
 import math
 import mergesort
 

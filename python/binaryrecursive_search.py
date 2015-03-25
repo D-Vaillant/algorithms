@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+''' binaryrecursive_search.py: Implements a binary search algorithm on an
+                               already sorted list. main function presorts
+                               the list using mergesort. Recursive. '''
+
+__author__ = "David Vaillant"
+__credits__ = "LCRS"
+
 import math
 import mergesort
 

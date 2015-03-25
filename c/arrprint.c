@@ -3,9 +3,12 @@
 
 #include <stdio.h>
 
-int main(int arr[], int size){
+int printer(int arr[], int size);
+
+int printer(int arr[], int size){
     printf("[");
-    for (int a = 0; a < size-1; a++){
+    int a;
+    for (a = 0; a < size-1; a++){
         printf("%d, ", arr[a]);
                                   }
     printf("%d", arr[size-1]);

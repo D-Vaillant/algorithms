@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+''' unit_sortingproblem.py: Unit test for the sorting problem. '''
+''' Creates an arbitrary number of unsorted arrays containing random integers
+    and sorts them using the imported algorithm. Reports worst, best, and 
+    average time and whether or not any of the arrays are improperly sorted.'''
+
+__author__ = "David Vaillant"
+
 import sys
 import random as r
 import heapsort as test # replace X with name of script

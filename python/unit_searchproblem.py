@@ -1,3 +1,13 @@
+#!/usr/bin/env python3
+''' unit_searchproblem.py: Unit test for the search problem. '''
+''' Creates an arbitrary number of unsorted arrays containing random integers,
+    inserts a randomly generated target in a random index for each array, and
+    runs the imported search algorithm to find the targets.
+    Checks if the index returned corresponds to the target and reports the
+    average, worst, and best times. '''
+
+__author__ = "David Vaillant"
+
 import time
 import sys
 import random as r
@@ -7,19 +17,13 @@ import binaryrecursive_search as test # replace X with name of script
 def rand_generator(size):
     arr = []
     for i in range(size):
-        arr.append(r.uniform(0, 1000))
-    a = r.randint(2,10)
-    b = r.randint(1,a-1)
-    arr[m.floor(size*b/a)] = -1
+        arr.append(r.randint(0,size))
     return arr
 
 def sorted_generator(size):
     arr = []
     for i in range(size):
         arr.append(i)
-    a = r.randint(2,10)
-    b = r.randint(1,a-1)
-    arr[m.floor(size*b/a)] = -1
     return arr
 
 def runner(size):

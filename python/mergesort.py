@@ -1,3 +1,9 @@
+#!/usr/bin/env python3
+''' mergesort.py: Implements the merge sort algorithm. '''
+
+__author__ = "David Vaillant"
+__credits__ = "LCRS"
+
 import math
 
 def remain(A, p, r):
