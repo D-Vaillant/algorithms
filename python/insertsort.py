@@ -3,7 +3,7 @@
                    error-prevention. '''
 
 __author__ = "David Vaillant"
-__credits__ = "LCRS"
+__credits__ = "CLRS"
 
 def main(array):
     try:

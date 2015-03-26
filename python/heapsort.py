@@ -3,7 +3,7 @@
                  the heapsort algorithm in order to return a sorted array.'''
 
 __author__ = "David Vaillant"
-__credits__ = "LCRS"
+__credits__ = "CLRS"
 
 import math
 from heap import *
