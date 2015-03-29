@@ -2,7 +2,7 @@
 ''' selection_sort.py: Implements the selection sort algorithm. '''
 
 __author__ = "David Vaillant"
-__credits__ = "LCRS"
+__credits__ = "CLRS"
 
 def main(array):
     for j in range(len(array)-1):

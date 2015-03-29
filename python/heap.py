@@ -3,7 +3,7 @@
              use on heaps. '''
 
 __author__ = "David Vaillant"
-__credits__ = "LCRS"
+__credits__ = "CLRS"
 
 import math
 

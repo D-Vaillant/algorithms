@@ -2,7 +2,7 @@
 ''' bubblesort.py: Implements the bubble sort algorithm. '''
 
 __author__ = "David Vaillant"
-__credits__ = "LCRS"
+__credits__ = "CLRS"
 
 def main(A):
     for i in range(len(A)-1):

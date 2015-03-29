@@ -2,7 +2,7 @@
 ''' quicksort.py: Implements the quicksort algorithm. '''
 
 __author__ = "David Vaillant"
-__credits__ = "LCRS"
+__credits__ = "CLRS"
 
 def main(arr):
     remain(arr, 0, len(arr)-1)
