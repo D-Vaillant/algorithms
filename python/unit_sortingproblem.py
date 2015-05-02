@@ -16,7 +16,7 @@ def main(size, runs):
         a = generator(size)
         b = isIncorrect(a)
         if b[0]:
-            print("Failed at indexes {0}, {1}.".format(b[1]-1,b[1]))
+            print("{2}: Failed at indexes {0}, {1}.".format(b[1]-1,b[1],j))
             #print(a)
             glass = False
     if glass: print("All arrays successfully sorted.")
@@ -24,7 +24,7 @@ def main(size, runs):
 def generator(size):
     arr = []
     for i in range(size):
-        arr.append(r.uniform(0, 100000)) 
+        arr.append(r.uniform(-100000, 100000)) 
 
     return test.main(arr)
 

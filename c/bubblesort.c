@@ -11,6 +11,7 @@
  *       Compiler:  gcc
  *
  *         Author:  David Vaillant
+ *         Credits: CLRS
  *
  * =====================================================================================
  */
@@ -18,7 +19,7 @@
 #include <stdio.h>
 #include "arrprint.c"
 
-void bubblesort(double arr[], long size)
+void sort(double arr[], long size)
 {
     int m;
     int s; 
@@ -38,12 +39,14 @@ void bubblesort(double arr[], long size)
     return;
 }
 
+/*
 void main()
 {
     int z = 7;
     double x[7] = {4, 2, 5, 3, 6, 1, 5.2};
-    bubblesort(x, z);
+    sort(x, z);
 
     d_printer(x, z);
     return;
 }
+*/
