@@ -28,13 +28,10 @@ class Matrix():
     def flatten(self, target=self.body):
         return_array = []
         for x in target:
-            if hasattr(x, '__iter__'):
+            if hasattr(x, 'flatten') or hasattr(x, '__iter__'):
                 return_array = return_array +  self.flatten(x)
             else: return_array.append(x)
         return return_array
-
-    def __iter__(self):
-        pass
 
 class TwoD_Matrix():
     def __init__(self, rows=0, cols=0):

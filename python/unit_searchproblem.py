@@ -12,39 +12,67 @@ import time
 import sys
 import random as r
 import math as m
-import binaryrecursive_search as test # replace X with name of script
+import linear_search as test # replace X with name of script
+from statistics import mean
 
-def rand_generator(size):
-    arr = []
-    for i in range(size):
-        arr.append(r.randint(0,size))
-    return arr
+class GeneratorWrapper():
+    @staticmethod
+    def rand_generator(size):
+        arr = [r.randrange(0, size) for _ in range(size)]
 
-def sorted_generator(size):
-    arr = []
-    for i in range(size):
-        arr.append(i)
-    return arr
+        target = r.randrange(0, size)
+        arr[target] = -1
+        
+        return arr, target
 
-def runner(size):
-    randarr = rand_generator(size)
-    sortarr = sorted_generator(size)
+    @staticmethod
+    def sorted_generator(size):
+        arr = list(range(size))
+        arr[0] = -1
+        return arr, 0
+        
+    @staticmethod
+    def antisorted_generator(size):
+        arr = list(reversed(range(size)))
+        arr[size-1] = -1    
+        return arr, size-1   
 
+def runner(size, gen_name, succeed=True):
+    arr, index_target = getattr(GeneratorWrapper, gen_name+"_generator")(size)
+
+    search_target = -1 if succeed else -2
+    
+    start = time.clock()
+    found_index = test.main(arr, search_target)
+    time_taken = time.clock() - start
+    
+    if found_index != None and arr[found_index] == search_target:
+        return found_index == index_target, time_taken
+    else:
+        return False, -1        
 
 def main(size, runs):
-    total = runs
-    successes = 0
-    start = time.clock()
-
-    index_1 = test.main(arr, -1)
-    index_2 = test.main(arr2, -1)
-    print("First array: index {0}, value {2}. Second array: index {1}, value {3}.".format(index_1, index_2, arr[index_1], arr2[index_2]))
-
-    var_1 = test.main(arr, -2)
-    var_2 = test.main(arr2, -2)
-    print("First array: returned {0}. Second array: returned {1}.".format(var_1, var_2))
-    print("Elapsed time: {0} seconds.".format(time.clock()-start))
-    return 'done'
+    types_dict = {
+        "rand":        True,
+        "sorted":      True,
+        "antisorted":  True,
+        }
+        
+    types_detail = { x:[[],[]] for x in types_dict if types_dict[x] }
+    
+    for type, detail_list in types_detail.items():
+        for _ in range(runs):
+            result, time = runner(size, type)
+            detail_list[0].append(result)
+            detail_list[1].append(time)
+            
+        percent = detail_list[0].count(True)/runs
+        avg_time = mean(detail_list[1])
+        print("Printing results for " + type + ":")
+        print("Percentage success: ", percent)
+        print("Average time: ", avg_time)
+     
+    return 0
 
 
 
