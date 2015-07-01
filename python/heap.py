@@ -7,7 +7,7 @@ __credits__ = "CLRS"
 
 import math
 
-class heap:
+class Heap:
     def __init__(self, arr):
         self.eapsize = len(arr)
         self.eap = arr
@@ -40,10 +40,10 @@ class heap:
             i = i-1
         return True
 
-class max_heap(heap):
+class Max_Heap(Heap):
     def __init__(self, arr):
-        super(max_heap, self).__init__(arr)
-        self.super(max_heap, self).build_max_heap()
+        super(Max_Heap, self).__init__(arr)
+        self.super(Max_Heap, self).build_max_heap()
 
 def left(i): 
     return (2*(i+1))-1

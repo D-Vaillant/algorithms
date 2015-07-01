@@ -10,10 +10,11 @@ from math import floor
 import insertsort as sort
 
 def main(A):
+    """" Sorts a list A of size n with elements taken from [0, 1). """
     n = len(A)
     B = [list() for x in range(n)]
-    for i in range(n):
-        B[floor(n*A[i])].append(A[i])
+    for i in A:
+        B[floor(n*i)].append(i)
     for i in range(n):
         sort.main(B[i])
-    return sum(B, [])
+    return sum(B, []) # Union operation on the list. 

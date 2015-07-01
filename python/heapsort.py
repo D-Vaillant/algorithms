@@ -6,10 +6,10 @@ __author__ = "David Vaillant"
 __credits__ = "CLRS"
 
 import math
-from heap import *
+from heap import Heap, Max_Heap
 
 def main(arr):
-    h = max_heap(arr)
+    h = Max_Heap(arr)
     for i in reversed(range(1, len(arr))):
         temp = h.eap[0]
         h.eap[0] = h.eap[i]
