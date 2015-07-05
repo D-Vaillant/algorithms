@@ -4,17 +4,21 @@
                      main for simplicity (at the cost of performance).'''
 
 __author__ = "David Vaillant"
-__credits = "LCRS"
+__credits__ = "LCRS"
+
+from collections import Counter
 
 def gen_main(A, k):
     """ Takes a list A and a value k such that i <= k for i in A.
         Returns a sorted list. """
     C = [0]*(k+1)
     B = [None]*len(A)
+
     for j in A:
         C[j] += 1 # Turns C into a Counter for A.
     for i in range(k):
         C[i+1] = C[i] + C[i+1] 
+
     for j in reversed(A):
         B[C[j]-1] = j
         C[j] -= 1

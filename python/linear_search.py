@@ -7,4 +7,4 @@ __credits__ = "CLRS"
 def main(array, v):
     for index, value in enumerate(array):
         if value == v: return index
-    return None
+    else: return None

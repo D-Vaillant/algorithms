@@ -18,11 +18,11 @@ def gen_main(A, interval):
     B = [list() for x in range(n)]
 
     # defines a surjection from the interval to range(n)
-    def f(x):
-        return floor(n*((x-interval[0])/(interval[1]-interval[0])))
+    f = lambda x: int(floor(n*((x-interval[0])/(interval[1]-interval[0]))))
 
-    for i in range(n):
-        B[floor(f(A[i]))].append(A[i])
+    for value in A:
+        B[f(value)].append(value)
     for i in range(n):
         sort.main(B[i])
+
     return sum(B, [])
