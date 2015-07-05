@@ -24,6 +24,67 @@ typedef struct Cell {
     struct Cell * n;
 } *cell;
 
+typedef struct Node {
+    int value;
+    struct Node * left;
+    struct Node * right;
+} *node;
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  node_add
+ *  Description:  Takes a node, a direction, and integer value and makes it so the node
+ *                points to a new node containing that integer value.
+ * =====================================================================================
+ */
+void node_add(node base, char dir, int val) {
+    node nouveau = malloc(sizeof(struct Node)); 
+    nouveau->value = val;
+
+    if(dir == 'r') {
+        base->right = nouveau;
+    } else if(dir == 'l') {
+        base->left = nouveau;
+    } else {
+        printf("Invalid direction entered: %c\n", dir);
+        free(nouveau);
+        return; 
+    }
+}
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  binary_tree_node
+ *  Description:  Unit test for binary tree implementation using struct Node.
+ * =====================================================================================
+ */
+void binary_tree_node(void) {
+    node bt = malloc(sizeof(struct Cell));
+    bt->value = 1;
+    node_add(bt, 'l', 2);
+}
+
+int ll_step(cell linked) {
+    if(linked->n) {
+        *linked = *(linked->n); 
+        return 1;
+    } else { return 0; }
+}
+
+cell ll_index(cell linked, int index) {
+    int i = 0;
+    while(i < 0) {
+        if(linked->n == NULL) {
+            linked = (cell) linked->n;
+            ++i;    
+        } else {
+            printf("WARNING: Overflow error.");
+            return linked;
+        }
+    }
+    return linked;
+}
 
 /* 
  * ===  FUNCTION  ======================================================================
@@ -50,13 +111,22 @@ void linked_list(void) {
     ll_add(ll, 6);
     ll_add(ll, 7);
 
+    int loop_stopper = 0;
+    do {
+        printf("%d\n", ll->value);
+        loop_stopper++;
+    } while(ll_step(ll) && loop_stopper < 50);
+
+    /*
     printf("Linked List Contents: %d %d %d %d %d %d %d\n", ll->value, ll->n->value, 
                                   ll->n->n->value, ll->n->n->n->value,
                                   ll->n->n->n->n->value, ll->n->n->n->n->n->value,
                                   ll->n->n->n->n->n->n->value); 
+    */
 }
 
 /* Runs unit tests of various data structs. */
-void main(void) {
+int main(void) {
     linked_list();
+    return 0;
 }    
