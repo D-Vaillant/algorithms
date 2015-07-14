@@ -31,6 +31,10 @@ typedef struct Node {
 } *node;
 
 
+void bst_print(node base, char * buffer, int buffer_size) {
+    
+}
+
 /* 
  * ===  FUNCTION  ======================================================================
  *         Name:  node_add
@@ -39,7 +43,11 @@ typedef struct Node {
  * =====================================================================================
  */
 void node_add(node base, char dir, int val) {
-    node nouveau = malloc(sizeof(struct Node)); 
+    node nouveau = malloc(sizeof(struct Node));
+    if(nouveau == NULL) {
+        printf("Memory allocation failed.\n");
+        exit(-1); }
+
     nouveau->value = val;
 
     if(dir == 'r') {
@@ -61,6 +69,10 @@ void node_add(node base, char dir, int val) {
  */
 void binary_tree_node(void) {
     node bt = malloc(sizeof(struct Cell));
+    if(bt == NULL) {
+        printf("Memory allocation failed.\n");
+        exit(-1); }
+
     bt->value = 1;
     node_add(bt, 'l', 2);
 }
@@ -79,8 +91,8 @@ cell ll_index(cell linked, int index) {
             linked = (cell) linked->n;
             ++i;    
         } else {
-            printf("WARNING: Overflow error.");
-            return linked;
+            printf("WARNING: Overflow error.\n");
+            break;
         }
     }
     return linked;
@@ -98,7 +110,11 @@ void ll_add(cell linked, int val) {
         target = (cell) target->n; }
 
     target->n = (cell) malloc(sizeof(struct Cell));
-    (target->n)->value = val;
+    if(target->) { (target->n)->value = val; }
+    else {
+        printf("WARNING: Overflow error.\n");
+        exit(-1);
+    }
 }
 
 void linked_list(void) {
@@ -111,7 +127,7 @@ void linked_list(void) {
     ll_add(ll, 6);
     ll_add(ll, 7);
 
-    int loop_stopper = 0;
+    int loop_stopper = 0; // Tired of pesky infinite loops? I got u fam
     do {
         printf("%d\n", ll->value);
         loop_stopper++;
