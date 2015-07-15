@@ -5,9 +5,9 @@ Credited as "CLRS."
 ## Sorting Algorithms
 <table>
     <tr>
-        <td>__Name__</td>
-        <td>__Python__</td>
-        <td>__C__</td>
+        <td><strong>Name</strong></td>
+        <td><strong>Python</strong></td>
+        <td><strong>C</strong></td>
     </tr>
     <tr>
         <td>Insertion</td>
@@ -22,9 +22,9 @@ I'll do this later.
 ## Data Structures
 <table>
     <tr>
-        <td>__Name__</td>
-        <td>__Python__</td>
-        <td>__C__</td>
+        <td><strong>Name</strong></td>
+        <td><strong>Python</strong></td>
+        <td><strong>C</strong></td>
     </tr>
     <tr>
         <td>Linked List</td>
