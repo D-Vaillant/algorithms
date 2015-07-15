@@ -6,7 +6,6 @@
 __author__ = "David Vaillant"
 __credits__ = "CLRS"
 
-import math
 import mergesort
 
 def main(A, v):
@@ -17,7 +16,7 @@ def remain(A, a, b, v):
         if A[a] == v: return a
         elif A[b] == v: return b
         else: return None
-    i = math.floor((a+b)/2)
+    i = (a+b)//2
     if A[i] == v: return i
     else:
         if A[i] > v: return remain(A, a, i, v)
