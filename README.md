@@ -10,14 +10,66 @@ Credited as "CLRS."
         <td><strong>C</strong></td>
     </tr>
     <tr>
+        <td>Selection</td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+    </tr>
+    <tr>
         <td>Insertion</td>
         <td>&#x2713;</td>
         <td>&#x2713;</td>
     </tr>
+    <tr>
+        <td>Insertion (Recursive)</td>
+        <td>&#x2713;</td>
+        <td>&#x2717;</td>
+    </tr>
+    <tr>
+        <td>Bubble</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Merge</td>
+        <td>&#x2713;</td>
+        <td>&#x2717;</td>
+    </tr>
+    <tr>
+        <td>Heap</td>
+        <td>&#x2713;</td>
+        <td>&#x2717;</td>
+    </tr>
+    <tr>
+        <td>Quick</td>
+        <td>&#x2713;</td>
+        <td>&#x2717;</td>
+    </tr>
 </table>
 
 ## Searching Algorithms
-I'll do this later.
+<table>
+    <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Python</strong></td>
+        <td><strong>C</strong></td>
+    </tr>
+    <tr>
+        <td>Insertion</td>
+        <td>&#x2713;</td>
+        <td>&#x2713;</td>
+    </tr>
+    <tr>
+        <td>Binary (Iterative)</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Binary (Recursive)</td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
 
 ## Data Structures
 <table>
