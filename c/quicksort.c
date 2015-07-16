@@ -20,7 +20,7 @@
 #include <stdlib.h>
 #include "arrprint.c"
 
-#define ARR_SIZE 15
+#define ARR_SIZE 10
 
 int partition(double A[], int initial, int final) {
     double tmp;
@@ -41,7 +41,7 @@ int partition(double A[], int initial, int final) {
     A[i] = A[final];
     A[final] = tmp;
     
-    return n;
+    return i;
 }
 
 void remain(double A[], int initial, int final) {
@@ -65,7 +65,6 @@ void main(void) {
         arr[i] = rand() % 50;
     }
 
-    d_printer(arr, ARR_SIZE);
     sort(arr, ARR_SIZE);
     d_printer(arr, ARR_SIZE);
 }
