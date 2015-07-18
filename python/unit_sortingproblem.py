@@ -8,7 +8,7 @@ __author__ = "David Vaillant"
 
 import sys
 import random as r
-import heapsort as test # replace X with name of script
+import quicksort as test # replace X with name of script
 
 def main(size, runs):
     glass = True
@@ -16,15 +16,13 @@ def main(size, runs):
         a = generator(size)
         b = isIncorrect(a)
         if b[0]:
-            print("{2}: Failed at indexes {0}, {1}.".format(b[1]-1,b[1],j))
+            #print("{2}: Failed at indexes {0}, {1}.".format(b[1]-1,b[1],j))
             #print(a)
             glass = False
     if glass: print("All arrays successfully sorted.")
 
 def generator(size):
-    arr = []
-    for i in range(size):
-        arr.append(r.uniform(-100000, 100000)) 
+    arr = [r.randrange(1000) for x in range(size)]
 
     return test.main(arr)
 

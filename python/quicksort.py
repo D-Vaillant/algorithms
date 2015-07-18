@@ -6,6 +6,7 @@ __credits__ = "CLRS"
 
 def main(arr):
     remain(arr, 0, len(arr)-1)
+    return arr
 
 def remain(arr, p, r):
     if p<r:
@@ -21,9 +22,9 @@ def partition(A, p, r):
         if A[j] <= x:
             i = i+1
             A[i], A[j] = A[j], A[i]
-        print(A)
+        #print(A)
     A[i+1], A[r] = A[r], A[i+1]
-    print(A)
+    #print(A)
     return i+1
 
 

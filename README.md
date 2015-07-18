@@ -47,7 +47,7 @@ Credited as "CLRS."
     <tr>
         <td>Quick</td>
         <td>&#x2713;</td>
-        <td>&#x2717;</td>
+        <td>&#x2713;</td>
     </tr>
     <tr>
         <td>Quick (Randomized)</td>

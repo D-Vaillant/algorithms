@@ -4,6 +4,7 @@
  *       Filename:  quicksort.c
  *
  *    Description:  Implementation of... you know. Quicksort algorithm.
+ *                  Includes a randomized quicksort implementation as well.
  *
  *        Version:  1.0
  *        Created:  07/14/2015 09:33:39 PM
