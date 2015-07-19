@@ -24,9 +24,9 @@ void d_printer(double arr[], int size)
     int a = 0;
     for (a; a < size-1; a++)
     {
-        printf("%.3lf, ", arr[a]);
+        printf("%.2lf, ", arr[a]);
     }
-    printf("%.3lf", arr[size-1]);
+    printf("%.2lf", arr[size-1]);
     printf("]\n");
     return;
 }

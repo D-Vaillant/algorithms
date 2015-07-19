@@ -39,7 +39,7 @@ void sort(double arr[], long size)
     return;
 }
 
-/*
+
 void main()
 {
     int z = 7;
@@ -49,4 +49,4 @@ void main()
     d_printer(x, z);
     return;
 }
-*/
+

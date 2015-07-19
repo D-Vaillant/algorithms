@@ -32,7 +32,7 @@ Credited as "CLRS."
     <tr>
         <td>Merge</td>
         <td>&#x2713;</td>
-        <td>&#x2713;</td>
+        <td>&#x2713;?</td>
     </tr>
     <tr>
         <td>Heap</td>

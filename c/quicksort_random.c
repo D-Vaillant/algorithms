@@ -1,13 +1,12 @@
 /*
  * =====================================================================================
  *
- *       Filename:  quicksort.c
+ *       Filename:  quicksort_random.c
  *
- *    Description:  Implementation of... you know. Quicksort algorithm.
- *                  Includes a randomized quicksort implementation as well.
+ *    Description:  
  *
  *        Version:  1.0
- *        Created:  07/14/2015 09:33:39 PM
+ *        Created:  07/17/2015 01:29:43 PM
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -23,9 +22,10 @@
 
 #define ARR_SIZE 10
 
+
 int partition(double A[], int initial, int final) {
     double tmp;
-    int i = initial;
+    int i = initial; 
     
     int n;
     for(n = initial; n < final; n++) {
@@ -40,16 +40,30 @@ int partition(double A[], int initial, int final) {
     tmp = A[i];
     A[i] = A[final];
     A[final] = tmp;
-   
-    //printf("Initial is %d, partition is %d, final is %d. ", initial, i, final); 
+
+    //printf("Initial is %d, partition is %d, final is %d.\n", initial, i, final);
     //d_printer(&(A[initial]), i-initial);
-    //d_printer(&(A[i]), final + 1 - i);
+    //d_printer(&(A[i]), final - i + 1);
+    //printf("\n");
     return i;
 }
 
+
+int random_partition(double A[], int initial, int final) {
+    //int i = (rand()%(final-initial)) + initial;
+    int i = final - (rand()%(final-initial));
+    double tmp = A[final];
+    A[final] = A[i];
+    A[i] = tmp;
+     
+    
+    return partition(A, initial, final);
+}
+
+
 void remain(double A[], int initial, int final) {
     if(initial < final) {
-        int q = partition(A, initial, final);
+        int q = random_partition(A, initial, final);
         remain(A, initial, q-1);
         remain(A, q, final);
     }
@@ -59,6 +73,7 @@ void remain(double A[], int initial, int final) {
 
 void sort(double A[], int size) {
     remain(A, 0, size-1); }
+
 
 void main(void) {
     srand(time(0));

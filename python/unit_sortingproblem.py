@@ -8,7 +8,7 @@ __author__ = "David Vaillant"
 
 import sys
 import random as r
-import quicksort as test # replace X with name of script
+import quicksort_random as test # replace X with name of script
 
 def main(size, runs):
     glass = True
