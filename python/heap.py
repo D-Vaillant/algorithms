@@ -16,7 +16,7 @@ class Heap:
         i = math.floor(self.eapsize/2)
         while i >= 0:
            self = self.max_heapify(i)
-           i = i-1
+           i -= 1
         return "Complete."
 
     def max_heapify(self, i):

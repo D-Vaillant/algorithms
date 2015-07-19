@@ -43,14 +43,22 @@ double * bucket_sort(double arr[], int size)
    return general_sort(arr, size, find_interval(arr, size)); 
 }
 
+int surject(double value, int interval[2]){
+    return (int) floor((value-interval[0])/(interval[1]-interval[0]))
+}
 double * general_sort(double arr[], int size, int interval[2])
 {
-    double a = 1.0;
-    return *a;
+    int n;
+    double * counter = malloc(size*sizeof(double));
+    for(n = 0; n < size; n++) { counter[n] = 0; }
+
+    for(n = 0; n < size; n++) {
+        ++counter[surject(arr[n])];
+    }
 }
 
 double * main(void)
 {
-    arr = {1, 2, 3};
-    return bucket_sort(arr, 3);
+    arr = {4, 2, 6, 2, 3, 1, 6, 9, 5, 3};
+    return bucket_sort(arr, 10);
 }

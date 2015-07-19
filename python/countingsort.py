@@ -11,10 +11,12 @@ def gen_main(A, k):
         Returns a sorted list. """
     C = [0]*(k+1)
     B = [None]*len(A)
+
     for j in A:
         C[j] += 1 # Turns C into a Counter for A.
     for i in range(k):
         C[i+1] = C[i] + C[i+1] 
+
     for j in reversed(A):
         B[C[j]-1] = j
         C[j] -= 1
