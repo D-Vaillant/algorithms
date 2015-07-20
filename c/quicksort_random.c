@@ -50,7 +50,6 @@ int partition(double A[], int initial, int final) {
 
 
 int random_partition(double A[], int initial, int final) {
-    //int i = (rand()%(final-initial)) + initial;
     int i = final - (rand()%(final-initial));
     double tmp = A[final];
     A[final] = A[i];

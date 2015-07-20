@@ -8,25 +8,34 @@ void d_printer(double arr[], int size);
 
 void printer(int arr[], int size)
 {
-    printf("[");
-    int a;
-    for (a = 0; a < size-1; a++)
-    {
-        printf("%d, ", arr[a]);
+    if(size){
+        printf("[");
+        int a;
+        for (a = 0; a < size-1; a++)
+        {
+            printf("%d, ", arr[a]);
+        }
+        printf("%d", arr[size-1]);
+        printf("]\n");
+    } else {
+        printf("[]\n");
     }
-    printf("%d", arr[size-1]);
-    printf("]\n");
 }
 
 void d_printer(double arr[], int size)
 {
-    printf("[");
-    int a = 0;
-    for (a; a < size-1; a++)
-    {
-        printf("%.2lf, ", arr[a]);
+    if(size){
+        printf("[");
+        int a = 0;
+        for (a; a < size-1; a++)
+        {
+            printf("%.2lf, ", arr[a]);
+        }
+        printf("%.2lf", arr[size-1]);
+        printf("]\n");
+    } else{
+        printf("[]\n");
     }
-    printf("%.2lf", arr[size-1]);
-    printf("]\n");
+
     return;
 }
