@@ -37,7 +37,7 @@ Credited as "CLRS."
     <tr>
         <td>Merge</td>
         <td>&#x2713;</td>
-        <td>&#x2713;?</td>
+        <td>&#x2713;</td>
         <td>&#x2717;</td>
     </tr>
     <tr>
@@ -84,6 +84,7 @@ Credited as "CLRS."
         <td><strong>Name</strong></td>
         <td><strong>Python</strong></td>
         <td><strong>C</strong></td>
+        <td><strong>Ruby</strong></td>
     </tr>
     <tr>
         <td>Linear</td>
@@ -112,6 +113,7 @@ Credited as "CLRS."
         <td><strong>Name</strong></td>
         <td><strong>Python</strong></td>
         <td><strong>C</strong></td>
+        <td><strong>Ruby</strong></td>
     </tr>
     <tr>
         <td>Heap</td>
