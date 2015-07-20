@@ -4,9 +4,7 @@
                      main for simplicity (at the cost of performance).'''
 
 __author__ = "David Vaillant"
-__credits__ = "LCRS"
-
-from collections import Counter
+__credits = "CLRS"
 
 def gen_main(A, k):
     """ Takes a list A and a value k such that i <= k for i in A.
