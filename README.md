@@ -11,10 +11,16 @@ Credited as "CLRS."
         <td><strong>Ruby</strong></td>
     </tr>
     <tr>
+        <td>UNIT TEST</td>
+        <td>&#x2713;</td>
+        <td>&#x2717;</td>
+        <td>&#x2717;</td>
+    </tr>
+    <tr>
         <td>Selection</td>
         <td>&#x2713;</td>
         <td>&#x2713;</td>
-        <td>&#x2717;</td>
+        <td>&#x2713;</td>
     </tr>
     <tr>
         <td>Insertion</td>
@@ -86,6 +92,11 @@ Credited as "CLRS."
         <td><strong>C</strong></td>
         <td><strong>Ruby</strong></td>
     </tr>
+    <tr>
+        <td>UNIT TEST</td>
+        <td>&#x2713;</td>
+        <td>&#x2717;</td>
+        <td>&#x2717;</td>
     <tr>
         <td>Linear</td>
         <td>&#x2713;</td>
