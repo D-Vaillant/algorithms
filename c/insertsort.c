@@ -2,12 +2,12 @@
     Implementation of the insertion sort algorithm. */
 
 #include <stdio.h>
-//#include "arrprint.c"
+#include "arrprint.c"
 
-double * sort(double arr[], int size){
+int * sort(int arr[], int size){
     int m=1;
     int k;
-    double key;
+    int key;
 
     for (m; m<size; m++)
     {
@@ -33,16 +33,16 @@ void printer(int arr[], int size){
     printf("%d", arr[size-1]);
     printf("]\n");
 }
+*/
 
-
-int test(){
+int main(){
     int z = 7;
     int x[7] = {8, 7, 6, 5, 4,3,2};
     int *y;
-    y = insertsort(x, z);
+    y = sort(x, z);
     
     printer(x, z);
     return 0;
 }
-*/
+
 

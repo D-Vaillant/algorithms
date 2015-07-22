@@ -31,7 +31,7 @@ Credited as "CLRS."
     <tr>
         <td>Insertion (Recursive)</td>
         <td>&#x2713;</td>
-        <td>&#x2713;</td>
+        <td>&#x2717;</td>
         <td>&#x2717;</td>
     </tr>
     <tr>
@@ -55,7 +55,7 @@ Credited as "CLRS."
     <tr>
         <td>Bucket</td>
         <td>&#x2713;</td>
-        <td>&#x2713;</td>
+        <td>&#x2717;</td>
         <td>&#x2717;</td>
     </tr>
     <tr>
@@ -72,7 +72,7 @@ Credited as "CLRS."
     </tr>
     <tr>
         <td>Radix</td>
-        <td>&#x2713;</td>
+        <td>&#x2717;</td>
         <td>&#x2717;</td>
         <td>&#x2717;</td>
     </tr>
