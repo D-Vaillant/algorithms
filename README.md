@@ -31,7 +31,7 @@ Credited as "CLRS."
     <tr>
         <td>Insertion (Recursive)</td>
         <td>&#x2713;</td>
-        <td>&#x2717;</td>
+        <td>&#x2713;</td>
         <td>&#x2717;</td>
     </tr>
     <tr>
