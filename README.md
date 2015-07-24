@@ -71,15 +71,9 @@ Credited as "CLRS."
         <td>&#x2717;</td>
     </tr>
     <tr>
-        <td>Radix</td>
-        <td>&#x2717;</td>
-        <td>&#x2717;</td>
-        <td>&#x2717;</td>
-    </tr>
-    <tr>
         <td>Counting</td>
         <td>&#x2713;</td>
-        <td>&#x2717;</td>
+        <td>&#x2713;</td>
         <td>&#x2717;</td>
     </tr>
 </table>
