@@ -12,9 +12,15 @@ class ArbitraryNode:
     def isLeftmostSibling(self):
         return self.parent and self.parent.child is self
     
-    def getLastSibling(self):
-        x = self.sibling
-        while x and x.sibling:
+    def getInitialSibling(self):
+        if self.getParent():
+            return self.parent.child
+        else:
+            return self
+            
+    def getTerminalSibling(self):
+        x = self
+        while x.sibling:
             x = x.sibling
         return x
         
@@ -26,16 +32,19 @@ class ArbitraryNode:
             x = x.sibling
         return ret
         
-    def findLeftSibling(self):
+    def getLeftSibling(self):
         if not self.getParent():
             return None
-        left_candidate = self.getParent().child.sibling
-        while(left_candidate and left_candidate.sibling is not self):
-            left_candidate = left_candidate.sibling
-        return left_candidate
+        left_candidate = self.getInitialSibling()
+        if left_candidate is self: return self
+        else:
+            while(left_candidate.sibling is not self and left_candidate):
+                left_candidate = left_candidate.sibling
+        return left_candidate if left_candidate.sibling is self \
+                              else None
         
-    def getLastChild(self):
-        return self.child.getLastSibling() if self.child else None
+    def getTerminalChild(self):
+        return self.child.getTerminalSibling() if self.child else None
         
     def getChildren(self):
         ret = []
@@ -62,26 +71,48 @@ class ArbitraryTree:
             WARNING: Wipes out the tree below!" """
         self.root = ArbitraryNode(x)
         
-    def addNode(self, x, parent = None):
-        """ Adds a node with key x to the given parent.
+    def createNode(self, x, parent = None):
+        """ Creates a node with key x with given parent.
+            If no parent specified, adds to root. """        
+        newNode = ArbitraryNode(x, None, None, parent)
+        self.addNode(newNode, parent)
+        return
+        
+    def addNode(self, newNode, parent = None):
+        """ Adds a node to the tree with given parent as right-most sibling.
             If no parent specified, adds to root. """
         if not parent: parent = self.root
-        y = parent.getLastChild()
         
-        newNode = ArbitraryNode(x, None, None, parent)
+        y = parent.getTerminalChild()
+        
         if y: y.sibling = newNode
         else: parent.child = newNode
+        newNode.parent = parent
         return
         
     def removeNode(self, node_in_tree):
         """ Removes a node and all child nodes. """
         if node_in_tree.isLeftmostSibling():
-            if self.parent:
-                self.parent.child = self.sibling
+            if node_in_tree.parent:
+                node_in_tree.parent.child = node_in_tree.sibling
         else:
-            leftSib = node_in_tree.findLeftSibling()
+            leftSib = node_in_tree.getLeftSibling()
             leftSib.sibling = node_in_tree.sibling
         for kid in node_in_tree.getChildren():
             self.removeNode(kid)
         node_in_tree.killNode()
-        
+    
+def testTree(x):
+    return ArbitraryTree(x)
+   
+def testNode(x):
+    return ArbitraryNode(x)
+    
+n = testTree(5)
+a = testNode(1)
+b = testNode(2)
+c = testNode(3)
+n.addNode(a)
+n.addNode(b)
+n.addNode(c)
+#assert n.root.getChildren() == [a, b, c]
