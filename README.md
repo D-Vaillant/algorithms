@@ -1,6 +1,7 @@
 # algorithms
 Implementations of various algorithms drawn from Introduction to Algorithms, 2nd Edition by Cormen, Leiserson, Rivest, and Stein.
-Credited as "CLRS."
+
+Some implementations are trivial so they'll be marked with a #.
 
 ## Sorting Algorithms
 <table>
@@ -119,6 +120,18 @@ Credited as "CLRS."
         <td><strong>Python</strong></td>
         <td><strong>C</strong></td>
         <td><strong>Ruby</strong></td>
+    </tr>
+    <tr>
+        <td>Stack</td>
+        <td>#</td>
+        <td>&#x2717;</td>
+        <td>#</td>
+    </tr>
+    <tr>
+        <td>Queue</td>
+        <td>&#x2713;</td>
+        <td>&#x2717;</td>
+        <td>&#x2717;</td>
     </tr>
     <tr>
         <td>Heap</td>
