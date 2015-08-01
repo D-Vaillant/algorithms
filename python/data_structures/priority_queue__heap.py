@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-''' priority_queue.py: Implements a priority queue data structure based off
+''' priority_queue_heap.py: Implements a priority queue data structure based off
                        of heaps. '''
 
 __author__ = "David Vaillant"
