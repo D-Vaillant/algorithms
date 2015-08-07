@@ -123,7 +123,7 @@ Some implementations are trivial so they'll be marked with a #.
     </tr>
     <tr>
         <td>Stack</td>
-        <td>#</td>
+        <td>&#2713;</td>
         <td>&#x2717;</td>
         <td>#</td>
     </tr>
