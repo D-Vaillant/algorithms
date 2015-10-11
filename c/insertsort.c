@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include "arrprint.c"
 
-int * sort(int arr[], int size){
+int * insert_sort(int arr[], int size){
     int m=1;
     int k;
     int key;
@@ -35,6 +35,7 @@ void printer(int arr[], int size){
 }
 */
 
+/*
 int main(){
     int z = 7;
     int x[7] = {8, 7, 6, 5, 4,3,2};
@@ -44,5 +45,4 @@ int main(){
     printer(x, z);
     return 0;
 }
-
-
+*/
