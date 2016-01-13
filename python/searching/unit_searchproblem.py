@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-''' unit_searchproblem.py: Unit test for the search problem. '''
-''' Creates an arbitrary number of unsorted arrays containing random integers,
+""" unit_searchproblem.py: Unit test for the search problem.
+    Creates an arbitrary number of unsorted arrays containing random integers,
     inserts a randomly generated target in a random index for each array, and
     runs the imported search algorithm to find the targets.
+
     Checks if the index returned corresponds to the target and reports the
-    average, worst, and best times. '''
+    average, worst, and best times. """ 
 
 __author__ = "David Vaillant"
 
@@ -12,7 +13,7 @@ import time
 import sys
 import random as r
 import math as m
-import linear_search as test # replace X with name of script
+import binaryrecursive_search as test # replace X with name of script
 from statistics import mean
 
 class GeneratorWrapper():
@@ -32,9 +33,9 @@ class GeneratorWrapper():
         return arr, 0
         
     @staticmethod
-    def antisorted_generator(size):
+    def reverse_sorted_generator(size):
         arr = list(reversed(range(size)))
-        arr[size-1] = -1    
+        arr[-1] = -1    
         return arr, size-1   
 
 def runner(size, gen_name, succeed=True):
@@ -43,19 +44,25 @@ def runner(size, gen_name, succeed=True):
     search_target = -1 if succeed else -2
     
     start = time.clock()
-    found_index = test.main(arr, search_target)
+    found_index = test.search(arr, search_target)
     time_taken = time.clock() - start
     
-    if found_index != None and arr[found_index] == search_target:
-        return found_index == index_target, time_taken
+    if search_target == -1:
+        if found_index is not None and arr[found_index] == search_target:
+            return found_index == index_target, time_taken
+        else:
+            return False, -1        
     else:
-        return False, -1        
+        if found_index is None:
+            return True, time_taken
+        else:
+            return False, -1
 
 def main(size, runs):
     types_dict = {
-        "rand":        True,
-        "sorted":      True,
-        "antisorted":  True,
+        "rand":            True,
+        "sorted":          True,
+        "reverse_sorted":  True,
         }
         
     types_detail = { x:[[],[]] for x in types_dict if types_dict[x] }
@@ -67,16 +74,17 @@ def main(size, runs):
             detail_list[1].append(time)
             
         percent = detail_list[0].count(True)/runs
-        avg_time = mean(detail_list[1])
-        print("Printing results for " + type + ":")
+        avg_time = mean([x for x in detail_list[1] if x > 0])
+        print("Results for " + type + ":")
         print("Percentage success: ", percent)
         print("Average time: ", avg_time)
+        print()
      
     return 0
 
 
 
 if len(sys.argv) > 1:
-    main(int(sys.argv[1]), 25)
+    main(int(sys.argv[1]), 100)
 else:
-    main(1000,25)
+    main(1000, 100)

@@ -8,8 +8,9 @@ __credits__ = "CLRS"
 
 import mergesort
 
-def main(A, v):
-    return remain(mergesort.main(A), 0, len(A)-1, v)
+def search(A, v, is_sorted = False):
+    return remain(A, 0, len(A)-1, v) if is_sorted else \ 
+           remain(mergesort.main(A), 0, len(A)-1, v)
 
 def remain(A, a, b, v):
     if b - a <= 1:

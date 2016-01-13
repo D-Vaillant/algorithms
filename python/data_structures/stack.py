@@ -1,5 +1,7 @@
 """ stack.py
-        Simple implementation of stacks in Python. """
+        Simple implementation of stacks in Python. 
+        
+        Really, really simple. Not really worth the effort here. """
         
 class Stack:
     def __init__(self):

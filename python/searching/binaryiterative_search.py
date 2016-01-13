@@ -10,8 +10,8 @@ __credits__ = "CLRS"
 from math import floor 
 import mergesort
 
-def main(A, v):
-    return riskymain(mergesort.main(A), v)
+def main(A, v, is_sorted = False):
+    return riskymain(A, v) if is_sorted else riskymain(mergesort.main(A), v)
     
 def riskymain(A, v):
     """ If v is in A, returns i s.t. A[i] = v. Relies on A being sorted. """
