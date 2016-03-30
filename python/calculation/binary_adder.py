@@ -5,7 +5,7 @@ __author__ = "David Vaillant"
 __credits__ = "CLRS, Chapter 2.1"
 
 def binary_add(x, y):
-    """ Adds two binary arrays together. """
+    """ Adds two "binary" arrays together. """
     assert(len(x) == len(y))
 
     z = [0] * (len(x)+1)

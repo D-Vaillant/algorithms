@@ -13,22 +13,17 @@ class ArbitraryNode:
         return "[NODE key={}]".format(self.key)
         
     def isLeftmostSibling(self):
-        """ Returns True if there are no Nodes with this one as a sibling. """
-        if self.getParent(): return (self.parent.child == self)
-        else: return False
+        """ Returns False if there are no Nodes with this one as a sibling. """
+        return (self.parent.child == self) if self.getParent() else False
     
     def getInitialSibling(self):
         """ Returns a Node with the same parent that is the leftmost. """
-        if self.getParent():
-            return self.parent.child
-        else:
-            return None
+        return self.parent.child if self.getParent() else None
             
     def getTerminalSibling(self):
         """ Returns a Node with the same parent that is the rightmost. """
         x = self
-        while x.sibling:
-            x = x.sibling
+        while x.sibling: x = x.sibling
         return x
         
     def getSiblings(self):
@@ -42,27 +37,22 @@ class ArbitraryNode:
         
     def getLeftSibling(self):
         """ Returns a Node N such that N.sibling = self. """
-        if not self.getParent():
+        if not self.getParent: return None
+
+        left_node = self.getInitialSibling()
+        if left_node is self: 
             return None
-        left_candidate = self.getInitialSibling()
-        if left_candidate is self: return None
         else:
-            while(left_candidate.sibling is not self and left_candidate):
-                left_candidate = left_candidate.sibling
-        return left_candidate if left_candidate.sibling is self \
-                              else None
+            while (left_node(left_node.sibling is not self) and (left_node is not None):
+                left_node = left_node.sibling
         
     def getTerminalChild(self):
         """ Returns the rightmost child of the Node. """
         return self.child.getTerminalSibling() if self.child else None
         
     def getChildren(self):
-        """ Returns an array of Nodes N[] s.t. n in N iff n.parent = self """
-        ret = []
-        x = self.child
-        if x:
-            ret.extend(x.getSiblings())
-        return ret
+        """ Returns an array of children of self, i.e. chd.parent = self. """
+        return x.child.getSiblings() if x.child else []
         
     def getParent(self):
         """ Gets parent. """
