@@ -8,7 +8,7 @@ def binary_add(x, y):
     """ Adds two binary arrays together. """
     # Makes sure that the arrays have the same length.
     # Could be changed to padding on extra zeroes, if so desired.
-    if len(x) != len(y): return None
+    assert(len(x) == len(y))
 
     z = [0] * (len(x)+1)
     for a, (i, j) in enumerate(zip(x[::-1], y[::-1])):

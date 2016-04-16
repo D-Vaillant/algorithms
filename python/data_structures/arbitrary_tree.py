@@ -20,23 +20,25 @@ class Node:
     def __repr__(self):
         return "[NODE key={}]".format(self.key)
         
+<<<<<<< HEAD
     def isInitialSibling(self):
         """ Returns True if there are no Nodes with this one as a sibling.
                 Also returns True if the Node is an only sibling. """
         return not self.getParent() or (self.parent.child is self)
+=======
+    def isLeftmostSibling(self):
+        """ Returns False if there are no Nodes with this one as a sibling. """
+        return (self.parent.child == self) if self.getParent() else False
+>>>>>>> 1ecb081edbb58df0af9b44c4a6f81c5e0faaf8f0
     
     def getInitialSibling(self):
         """ Returns a Node with the same parent that is the leftmost. """
-        if self.getParent():
-            return self.parent.child
-        else:
-            return None
+        return self.parent.child if self.getParent() else None
             
     def getTerminalSibling(self):
         """ Returns a Node with the same parent that is the rightmost. """
         x = self
-        while x.sibling:
-            x = x.sibling
+        while x.sibling: x = x.sibling
         return x
         
     def getSiblings(self):
@@ -50,6 +52,7 @@ class Node:
         
     def getPriorSibling(self):
         """ Returns a Node N such that N.sibling = self. """
+<<<<<<< HEAD
         # Return nothing if the Node is the initial sibling.
         if self.isInitialSibling(): return None
 
@@ -57,15 +60,30 @@ class Node:
         while(left_candidate.sibling is not self):
               left_candidate = left_candidate.sibling
         return left_candidate
+=======
+        if not self.getParent: return None
+
+        left_node = self.getInitialSibling()
+        if left_node is self: 
+            return None
+        else:
+            while (left_node(left_node.sibling is not self) and (left_node is not None):
+                left_node = left_node.sibling
+>>>>>>> 1ecb081edbb58df0af9b44c4a6f81c5e0faaf8f0
         
     def getTerminalChild(self):
         """ Returns the rightmost child of the Node. """
         return self.child.getTerminalSibling() if self.child else None
         
     def getChildren(self):
+<<<<<<< HEAD
         """ Returns an array of Nodes with self as their parent. """
         x = self.child
         return x.getSiblings() if x else []
+=======
+        """ Returns an array of children of self, i.e. chd.parent = self. """
+        return x.child.getSiblings() if x.child else []
+>>>>>>> 1ecb081edbb58df0af9b44c4a6f81c5e0faaf8f0
         
     def getParent(self):
         """ Gets parent. """
@@ -119,6 +137,7 @@ class ArbitraryTree:
         for kid in node_in_tree.getChildren():
             self.removeNode(kid)
         node_in_tree.killNode()
+<<<<<<< HEAD
 
 class TreeTester(unittest.TestCase):
     def setUp(self):
@@ -208,3 +227,5 @@ class TreeTester(unittest.TestCase):
             
 if __name__ == "__main__":
     unittest.main()
+=======
+>>>>>>> 1ecb081edbb58df0af9b44c4a6f81c5e0faaf8f0

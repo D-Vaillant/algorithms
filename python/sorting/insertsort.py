@@ -6,7 +6,7 @@ __credits__ = "CLRS, Chapter 2.1"
 
 V = False
 
-def sort(array):
+def main(array):
     """ Takes an array of values with a > and == operator, sorts it. """
     # Starts with 0, array[1].
     for index, value in enumerate(array[1:]):
@@ -27,7 +27,7 @@ def sort(array):
 
     return array
 
-def reverse_sort(array):
+def reversed_main(array):
     """ Toy solution for 2.1-2. """
     # Starts with 0, array[1].
     for index, value in enumerate(array[1:]):
