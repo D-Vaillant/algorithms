@@ -6,10 +6,12 @@
 __author__ = "David Vaillant"
 __credits__ = "CLRS"
 
+import unittest
 import mergesort
+from unittest_searching import SearchTester
 
-def search(A, v, is_sorted = False):
-    return remain(A, 0, len(A)-1, v) if is_sorted else \ 
+def binarysearch(A, v, is_sorted = False):
+    return remain(A, 0, len(A)-1, v) if is_sorted else \
            remain(mergesort.main(A), 0, len(A)-1, v)
 
 def remain(A, a, b, v):
@@ -22,3 +24,7 @@ def remain(A, a, b, v):
     else:
         if A[i] > v: return remain(A, a, i, v)
         else: return remain(A, i, b, v)
+
+if __name__ == "__main__":
+    SearchTester.search = binarysearch
+    unittest.main()

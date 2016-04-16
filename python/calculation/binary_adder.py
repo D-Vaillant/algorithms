@@ -14,7 +14,7 @@ def binary_add(x, y):
     for a, (i, j) in enumerate(zip(x[::-1], y[::-1])):
         # Makes sure that the array is a binary array.
         # Strictly speaking, not necessary. But nice.
-        if i not in [0. 1]: return False
+        if i not in [0, 1]: return False
         if j not in [0, 1]: return False
 
         # if i and j are both 1 

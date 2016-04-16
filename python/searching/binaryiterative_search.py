@@ -8,9 +8,12 @@ __author__ = "David Vaillant"
 __credits__ = "CLRS"
 
 from math import floor 
+import unittest
+
+from unittest_searching import SearchTester
 import mergesort
 
-def main(A, v, is_sorted = False):
+def binarysearch(A, v, is_sorted = False):
     return riskymain(A, v) if is_sorted else riskymain(mergesort.main(A), v)
     
 def riskymain(A, v):
@@ -26,3 +29,7 @@ def riskymain(A, v):
     if A[i] == v:
         return i
     else: return None
+
+if __name__ == "__main__":
+    SearchTester.search = binarysearch
+    unittest.main()
